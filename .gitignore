@@ -1,0 +1,6 @@
+# Pelican Server files
+*.pid
+
+# Python files
+*.pyc
+__pycache__/*
