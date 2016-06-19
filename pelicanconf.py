@@ -32,4 +32,7 @@ DEFAULT_PAGINATION = 5
 
 # Themes
 THEME = "pelican-bootstrap3"
-# BOOTSTRAP_THEME = "simplex"
+BOOTSTRAP_THEME = "yeti"
+
+# Static content
+STATIC_PATHS = ['images', ]
