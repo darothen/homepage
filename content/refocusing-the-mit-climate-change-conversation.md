@@ -1,14 +1,15 @@
 Title: Refocusing the MIT Climate Change Conversation
 Slug: refocusing-the-mit-climate-change-conversation
+Tags: MIT, Climate Change Conversation, divest, op-ed
 Date: 2015-06-08 09:25
 Modified: 2015-06-08 09:53
 Authors: Daniel Rothenberg
- 
+
 ## Divestment debate overshadows direct actions
 
 **By: Daniel Rothenberg, [Alec Bogdanoff](https://twitter.com/abogdanoff), [Arthur Yip](https://twitter.com/arthurhcyip), and [Paul Kishimoto](https://paul.kishimoto.name/)**
 
-*note - this essay originally appeared in the [2015 Commencement edition of The Tech](http://tech.mit.edu/V135/N16/rothenberg.html)* 
+*note - this essay originally appeared in the [2015 Commencement edition of The Tech](http://tech.mit.edu/V135/N16/rothenberg.html)*
 
 This week, the initial phase of the MIT Climate Change Conversation will conclude with the release of a committee report weighing the pros and cons of actions proposed by the MIT community. A focus of that report will be on divestment of the Institute’s endowment from fossil fuels. Without the early, critical efforts of Fossil Free MIT (FFMIT), the energetic, campus-wide discussion of MIT’s options for climate action would never have begun.
 

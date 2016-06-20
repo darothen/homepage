@@ -1,12 +1,13 @@
 Title: Simple Ray Tracer in NumbaPro-CUDA
 Slug: simple-ray-tracer-in-numbapro-cuda
+Tags: python, cuda, algorithm, numba, gpgpu, cuda
 Date: 2015-06-11 22:07
 Modified: 2015-07-03 13:26
 Authors: Daniel Rothenberg
- 
+
 For a long time, I've been looking for a good application of CUDA/GPGPU programming to some of the basic analysis I do in my research. Unfortunately, there really hasn't ever been any low-hanging fruit. That coupled with my desire to avoid pure C-programming at all costs was an ideal combination for avoiding learning the CUDA basics!
 
-That all changed last week and I decided to dive into things by working through [CUDA by Example]. As an added bonus, I decided to port everything I learned to Python using [NumbaPro](http://docs.continuum.io/numbapro/), which enables extensions for very easily compiling CUDA kernels. 
+That all changed last week and I decided to dive into things by working through [CUDA by Example]. As an added bonus, I decided to port everything I learned to Python using [NumbaPro](http://docs.continuum.io/numbapro/), which enables extensions for very easily compiling CUDA kernels.
 
 One of the really neat little projects in [CUDA by Example] is a simple ray tracer viewing a scene with random spheres:
 
@@ -21,22 +22,22 @@ We start with a simple data structure for encapsulating information for each of 
 ```language-python
 Sphere = np.dtype([
     # RGB color values (floats from [0, 1])
-    ('r', 'f4'),  ('g', 'f4'), ('b', 'f4'), 
-    # sphere radius 
+    ('r', 'f4'),  ('g', 'f4'), ('b', 'f4'),
+    # sphere radius
     ('radius', 'f4'),
-    # sphere (x, y, z) coordinates 
-    ('x', 'f4'),  ('y', 'f4'), ('z', 'f4'),], align=True) 
+    # sphere (x, y, z) coordinates
+    ('x', 'f4'),  ('y', 'f4'), ('z', 'f4'),], align=True)
 Sphere_t = numbapro.from_dtype(Sphere)
 ```
 
-The only fancy thing we have to do here is bind our `Sphere` type to something Numba recognizes via the last line; the rest of the Sphere data should be self-explanatory. 
+The only fancy thing we have to do here is bind our `Sphere` type to something Numba recognizes via the last line; the rest of the Sphere data should be self-explanatory.
 
 Two helper functions will come in handy in our calculation. First, it would be nice to have a function that computes whether or not a ray starting at (x, y) actually hits a given sphere. We write a `hit()` method compute this:
 
 ```language-python
 def hit(ox, oy, sph):
-    """ Compute whether a ray parallel to the z-axis originating at 
-    (ox, oy, INF) will intersect a given sphere; if so, return the 
+    """ Compute whether a ray parallel to the z-axis originating at
+    (ox, oy, INF) will intersect a given sphere; if so, return the
     distance to the surface of the sphere.
     """
     dx = ox - sph.x
@@ -56,14 +57,14 @@ Now, we need a function that iterates over *all* of the spheres to compute poten
 ``` language-python
 @cuda.jit(argtypes=(Sphere_t[:], int16[:,:,:]))
 def kernel(spheres, bitmap):
-    
+
     x, y = cuda.grid(2) # alias for threadIdx.x + ( blockIdx.x * blockDim.x ),
                         #           threadIdx.y + ( blockIdx.y * blockDim.y )
     # shift the grid to [-DIM/2, DIM/2]
     ox = x - DIM/2
     oy = y - DIM/2
 
-    r = 0. 
+    r = 0.
     g = 0.
     b = 0.
     maxz = -INF
@@ -76,7 +77,7 @@ def kernel(spheres, bitmap):
         if (t > maxz):
             dz = t - spheres[i].z # t = dz + z; inverting hit() result
             n = dz / sqrt( rad*rad )
-            fscale = n # shades the color to be darker as we recede from 
+            fscale = n # shades the color to be darker as we recede from
                        # the edge of the cube circumscribing the sphere
 
             r = spheres[i].r*fscale
@@ -99,8 +100,8 @@ Just like in pure CUDA, we need to manage data transfers between host and device
 ``` language-python
     # Create a container for the pixel RGBA information of our image
     bitmap = np.zeros([DIM, DIM, 4], dtype=np.int16)
-   
-    # Copy to device memory 
+
+    # Copy to device memory
     d_bitmap = cuda.to_device(bitmap)
     # Create empty container for our Sphere data on device
     d_spheres = cuda.device_array(SPHERES, dtype=Sphere_t)
@@ -109,7 +110,7 @@ Just like in pure CUDA, we need to manage data transfers between host and device
     temp_spheres = np.empty(SPHERES, dtype=Sphere_t)
     # ... sphere creation steps ...
     # Copy the sphere data to the device
-    cuda.to_device(temp_spheres, to=d_spheres) 
+    cuda.to_device(temp_spheres, to=d_spheres)
 ```
 
 The command for `bitmap` is similar to a `malloc` and assignment all in one. To initialize `d_bitmap` on the device, we can just copy over `bitmap`. Then we call a command similar to `cudaMalloc` to ready an array to contain our sphere data. Finally, we initialize `temp_spheres` on the host like using `malloc`,  populate it, and explicitly copy it to device into the memory already assigned for it.

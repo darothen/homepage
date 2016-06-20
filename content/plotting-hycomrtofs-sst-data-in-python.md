@@ -1,9 +1,10 @@
 Title: Plotting HYCOM/RTOFS SST data in Python
 Slug: plotting-hycomrtofs-sst-data-in-python
+Tags: python, cartopy, iris, xray, visualization, netcdf, data
 Date: 2015-07-02 13:01
 Modified: 2015-07-02 13:01
 Authors: Daniel Rothenberg
- 
+
 
 Based on [this notebook](https://gist.github.com/darothen/84ae9a29154389fe45a5), which highlights some basics on reading in RTOFS/netCDF output into Python, manipulating that data, and plotting it. For additional examples, [Filipe Fernandes has a great example of similar operations on his blog](https://ocefpaf.github.io/python4oceanographers/blog/2014/12/29/iris_ocean_models/).
 
@@ -11,7 +12,7 @@ Based on [this notebook](https://gist.github.com/darothen/84ae9a29154389fe45a5),
 ```python
     import netCDF4 as nc
     import numpy as np
-    
+
     %matplotlib inline
     import matplotlib.pyplot as plt
     import seaborn as sns
@@ -31,7 +32,7 @@ For starters, let's read in the data using the Unidate `netCDF4` module. This mo
     fn = "rtofs_glo_2ds_f001_1hrly_prog.nc"
     data = nc.Dataset(fn)
     print data
-``` 
+```
 
     <type 'netCDF4.Dataset'>
     root group (NETCDF3_CLASSIC data model, file format UNDEFINED):
@@ -43,8 +44,8 @@ For starters, let's read in the data using the Unidate `netCDF4` module. This mo
         history: archv2ncdf2d
         dimensions(sizes): MT(1), Y(3298), X(4500), Layer(1)
         variables(dimensions): float64 [4mMT[0m(MT), float64 [4mDate[0m(MT), int32 [4mLayer[0m(Layer), int32 [4mY[0m(Y), int32 [4mX[0m(X), float32 [4mLatitude[0m(Y,X), float32 [4mLongitude[0m(Y,X), float32 [4mu_velocity[0m(MT,Layer,Y,X), float32 [4mv_velocity[0m(MT,Layer,Y,X), float32 [4msst[0m(MT,Y,X), float32 [4msss[0m(MT,Y,X), float32 [4mlayer_density[0m(MT,Layer,Y,X)
-        groups: 
-  
+        groups:
+
 
 
 Each `Dataset` object contains a dict-like interface for accessing variables, which can be selected by their *var_name* from the original netCDF file. Let's select the SST data and inspect it in more detail.
@@ -66,10 +67,10 @@ Each `Dataset` object contains a dict-like interface for accessing variables, wh
     unlimited dimensions: MT
     current shape = (1, 3298, 4500)
     filling off
-    
 
 
-This gives us a quick overview of the sst data. It's a 3-dimensional dataset (time, latitude, and longitude). Furthermore, from the inspection of the full dataset, we can see that the latitude and longitude coordinates are actually aliases for a complex, 2D latitude-longitude system underpinning the model coordinate systems. 
+
+This gives us a quick overview of the sst data. It's a 3-dimensional dataset (time, latitude, and longitude). Furthermore, from the inspection of the full dataset, we can see that the latitude and longitude coordinates are actually aliases for a complex, 2D latitude-longitude system underpinning the model coordinate systems.
 
 ---
 
@@ -149,7 +150,7 @@ Note that we can use standard netCDF terminal commands to also inspect the conte
     		layer_density:_FillValue = 1.267651e+30f ;
     		layer_density:valid_range = 0.f, 0.f ;
     		layer_density:long_name = " density [90.9H]" ;
-    
+
     // global attributes:
     		:Conventions = "CF-1.0" ;
     		:title = "HYCOM ATLb2.00" ;
@@ -170,10 +171,10 @@ Another useful package for reading in netCDF or other structured datasets is [`x
     ds = xray.open_dataset(fn, decode_times=True)
     sst = ds.sst.values.ravel()
     sst_masked = sst[~np.isnan(sst)]
-    
+
     ## Masking a numpy array with multiple logical criteria:
     # sst_between_-10_5 = sst[(sst > -10) & (sst < 5)]
-    
+
     sns.distplot(sst_masked)
     print ds.sst[0]
     plt.imshow(ds.sst[0,::-100,::100])
@@ -183,7 +184,7 @@ Another useful package for reading in netCDF or other structured datasets is [`x
     array([[ nan,  nan,  nan, ...,  nan,  nan,  nan],
            [ nan,  nan,  nan, ...,  nan,  nan,  nan],
            [ nan,  nan,  nan, ...,  nan,  nan,  nan],
-           ..., 
+           ...,
            [ nan,  nan,  nan, ...,  nan,  nan,  nan],
            [ nan,  nan,  nan, ...,  nan,  nan,  nan],
            [ nan,  nan,  nan, ...,  nan,  nan,  nan]])
@@ -221,7 +222,7 @@ A more sophisticated mapping system is provided by the `iris`/`cartopy` ecosyste
 
 ``` language-python
     import cartopy.crs as ccrs
-    
+
     import iris
     import iris.plot as iplt
     import iris.quickplot as qplt
@@ -286,12 +287,12 @@ Generally speaking, the plotting machinery of `matplotlib` or `cartopy` can't ha
 ``` language-python
     import iris.analysis.cartography as iac
     sst_d = sst_c[0, ::10, ::10]
-    
+
     sst_d.remove_coord(sst_d.coord(var_name='Y'))
     sst_d.remove_coord(sst_d.coord(var_name='X'))
-    
+
     new_sst, extent = iac.project(sst_d, ccrs.PlateCarree())
-    
+
     print new_sst
 ```
 
@@ -323,7 +324,7 @@ We can now easily plot the dataset using `iris`' interface to `matplotlib`, as a
 
 ![png]({filename}/images/2015/07/SST_data_23_1.png)
 
---- 
+---
 
 As a slightly fancier example, let's just plot SSTs in the vicinity of the Gulf Stream.
 
@@ -332,38 +333,38 @@ First, we should extract a 'rectangular' box of SST data around the US Atlantic 
 
 ``` language-python
     sst_d = sst_c[:]
-    
+
     sst_d.remove_coord(sst_d.coord(var_name='Y'))
     sst_d.remove_coord(sst_d.coord(var_name='X'))
-    
+
     # add 360 to lon coord since it's not symmetric about the prime meridian
     #bbox = [-78.+360., 34., -75.+360., 42.]
     bbox = [-82.0+360., 32., -66.0+360., 45.]
-    
+
     minmax = lambda x: (np.min(x), np.max(x))
-    
+
     def bbox_extract_2Dcoords(cube, bbox):
         """
         Extract a sub-set of a cube inside a lon, lat bounding box
         bbox=[lon_min lon_max lat_min lat_max].
         NOTE: This is a work around too subset an iris cube that has
         2D lon, lat coords.
-        
+
         """
         lons = cube.coord('longitude').points
         lats = cube.coord('latitude').points
-        
+
         lons_inregion = np.logical_and(lons > bbox[0], lons < bbox[2])
         lats_inregion = np.logical_and(lats > bbox[1], lats < bbox[3])
         inregion = np.logical_and(lons_inregion, lats_inregion)
-            
+
         region_inds = np.where(inregion)
         imin, imax = minmax(region_inds[0])
         jmin, jmax = minmax(region_inds[1])
         return cube[..., imin:imax+1, jmin:jmax+1]
-    
+
     sst_sub = bbox_extract_2Dcoords(sst_d, bbox)
-    
+
     print sst_sub
 ```
 
@@ -389,7 +390,7 @@ As a reminder, we can collapse a dimension using a mathematical operation rather
 ``` language-python
     sst_proc = sst_sub.collapsed('time', iris.analysis.MEAN)
     #print sst_proc.shape
-    
+
     plt.imshow(sst_proc.data[::-1])
 ```
 
@@ -402,35 +403,35 @@ What's especially nice now is that we have a much simpler X-Y/lat-lon coordinate
     # Extra imports for annotating our map/plot
     from cartopy.feature import NaturalEarthFeature, COLORS
     from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
-    
+
     # Control feature/boundary resolution
     FEATURE_RES = '50m' # '10m' or '110m'
-    
+
     # Extract the data and coordinate system, masking any invalid
     # data points for convenience
     sst_proc.data = np.ma.masked_invalid(sst_proc.data)
     lon = sst_proc.coord('longitude').points
     lat = sst_proc.coord('latitude').points
-    
+
     # Set up the plotting canvas
     fig = plt.figure()
     ax = fig.add_subplot(111, projection=ccrs.PlateCarree())
-    
+
     # Set map extent
     ax.set_extent([bbox[0], bbox[2], bbox[1], bbox[3]])
-    
+
     # Add land political boundaries to map
     land_data = NaturalEarthFeature('physical', 'land', FEATURE_RES,
                                     edgecolor='face', # edgecolor == facecolor
                                     facecolor=COLORS['land']) # a nice default
-    states = NaturalEarthFeature('cultural', 
-                                 'admin_1_states_provinces', 
+    states = NaturalEarthFeature('cultural',
+                                 'admin_1_states_provinces',
                                  FEATURE_RES,
                                  edgecolor='grey', facecolor='none')
     ax.add_feature(land_data)
     ax.add_feature(states)
     ax.coastlines(resolution=FEATURE_RES, lw=1.15)
-    
+
     # Add some gridlines and use cartopy's convenience functions
     # for formatting them
     # Note - disabled for now, just change 'color' to enable
@@ -439,18 +440,18 @@ What's especially nice now is that we have a much simpler X-Y/lat-lon coordinate
     gl.xlabels_top = gl.ylabels_right = False
     gl.xformatter = LONGITUDE_FORMATTER
     gl.yformatter = LATITUDE_FORMATTER
-    label_style = dict(size=11, color='black', weight='regular', 
+    label_style = dict(size=11, color='black', weight='regular',
                        family='serif')
     gl.xlabel_style = gl.ylabel_style = label_style
-    
+
     # Plot the actual data, using the projection system as a coordinate
     # transform (I think this is right?)
     pc = ax.pcolormesh(lon, lat, sst_proc.data, transform=ccrs.PlateCarree(),
                        cmap=sst_palette)
-    cbar = fig.colorbar(pc, ax=ax, shrink=0.9) 
+    cbar = fig.colorbar(pc, ax=ax, shrink=0.9)
     cbar.ax.set_ylabel(sst_sub.units, labelpad=15., rotation=-90.,
                        fontdict=dict(size=12, weight='bold'))
-    
+
     ax.set_title("SST data from HYCOM/RTOFS", loc='left',
                  fontdict=dict(size=12, weight='bold'))
 

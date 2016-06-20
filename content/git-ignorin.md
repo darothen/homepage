@@ -1,9 +1,10 @@
 Title: Git Ignorin'
 Slug: git-ignorin
+Tags: git, OSX
 Date: 2015-06-26 10:07
 Modified: 2015-07-03 13:25
 Authors: Daniel Rothenberg
- 
+
 It gets really old having to create a site-specific `.gitignore` anytime I start a new project. It's especially troublesome since I tend to access the same repository when it's mounted on different filesystems, creating all sorts of superfluous, useless files (I'm talking about you, **.DS_Store**). Luckily, [gitignore.io](https://www.gitignore.io) has your back, and can quickly generate lists of ignorable files from many different operating systems, editors, and programming languages. Very useful!
 
 **OSX .gitignore**

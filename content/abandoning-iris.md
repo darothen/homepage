@@ -1,10 +1,11 @@
 Title: Abandoning Iris
 Slug: abandoning-iris
+Tags: python, iris, xray, netcdf, data
 Date: 2015-07-14 17:45
 Modified: 2015-07-14 17:45
 Authors: Daniel Rothenberg
- 
-Seven years ago, when I first started working with climate model output and analysis within Python, the software stack we had available was pretty shoddy. Although [direct interfaces to netCDF](https://github.com/Unidata/netcdf4-python) (the *de facto* standard data format in climate science) existed, they could be kind of clunky. They didn't have smart ways to manipulate coordinate systems attached to the data, they didn't play nice with updating metadata, and they usually had dependencies which were difficult to deal with (considering the bifurcation between netCDF3/netCDF4/HDF5). 
+
+Seven years ago, when I first started working with climate model output and analysis within Python, the software stack we had available was pretty shoddy. Although [direct interfaces to netCDF](https://github.com/Unidata/netcdf4-python) (the *de facto* standard data format in climate science) existed, they could be kind of clunky. They didn't have smart ways to manipulate coordinate systems attached to the data, they didn't play nice with updating metadata, and they usually had dependencies which were difficult to deal with (considering the bifurcation between netCDF3/netCDF4/HDF5).
 
 Some okay toolkits existed, though. A [package maintained by NCAR](https://www.pyngl.ucar.edu/Nio.shtml) exposed a good interface for manipulating netCDF data, and allowed you to play directly with NCL - a graphics scripting language used in the atmospheric sciences). But working with these tools - and cartographic supplements like [Basemap](http://matplotlib.org/basemap/) was very hacky and headache-inducing.
 
@@ -28,7 +29,7 @@ Iris is a toolkit which integrates directly with cartopy by wrapping geophysical
 
 ### Python 3
 
-I was content with these tools until I decided to suck it up and migrate to Python 3. That posed a problem - cartopy works *ok* with Python 3 (as in, I haven't run into any issues yet). But iris emphatically doesn't. It's also not clear when iris will become Python 3-compliant. 
+I was content with these tools until I decided to suck it up and migrate to Python 3. That posed a problem - cartopy works *ok* with Python 3 (as in, I haven't run into any issues yet). But iris emphatically doesn't. It's also not clear when iris will become Python 3-compliant.
 
 Luckily, there are *fantastic* alternatives to iris available. One of my favorites is [xray](http://xray.readthedocs.org/en/stable/), which exposes an API offering much of the same sort semantic handling of your netCDF data, but in a less-clunky, simpler manner. It also directly extends a good deal of the logic behind pandas, which itself is a fantastic way to manipulate timeseries/indexed datasets. Xray also works with Python 3 out of the box, and can very easily work with cartopy plotting routines ([it even has a plotting library in the works](http://xray.readthedocs.org/en/feature-plotting/)).
 

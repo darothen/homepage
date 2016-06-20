@@ -1,9 +1,10 @@
 Title: Louisville Severe Wx, 7/13-14/2015
 Slug: louisville-severe-wx-7132015
+Tags: weather, severe, forecasting, louisville
 Date: 2015-07-13 12:43
 Modified: 2015-07-14 17:18
 Authors: Daniel Rothenberg
- 
+
 <span style="color: red">**LAST UPDATED:** 10:49 AM EDT (1459Z)</span>
 
 ## Stormy Afternoon
@@ -38,7 +39,7 @@ I'll probably offer one or two more updates before I leave MIT to catch the last
 
 **UPDATE 8 - 3:25 PM EDT (0025Z)**
 
-A second round could be beginning for the Western half of Jefferson County as the squall line has back-built somewhat in the presence of a confluence of several boundaries. **Flash Flood Warnings** are still in effect for the county. 
+A second round could be beginning for the Western half of Jefferson County as the squall line has back-built somewhat in the presence of a confluence of several boundaries. **Flash Flood Warnings** are still in effect for the county.
 
 **UPDATE 7 - 2:57 PM EDT (1857Z)**
 
@@ -106,7 +107,7 @@ As the squall line advances and threatens the Louisville area, the SPC will [sho
 >
 > Scenario #2
 >
-> The second scenario involves a few complexes/bowing structures developing ahead of the main [squall line]... [i]f this occurs, onset of severe weather/flooding will occur by midday to mid afternoon.. [w]e will still be primed for large bowing segments that will yield damaging winds and flash flooding. Given several rounds of convection, Flash Flooding would be the bigger concern along with the rounds of damaging winds. Isolated tornadoes would be possible. 
+> The second scenario involves a few complexes/bowing structures developing ahead of the main [squall line]... [i]f this occurs, onset of severe weather/flooding will occur by midday to mid afternoon.. [w]e will still be primed for large bowing segments that will yield damaging winds and flash flooding. Given several rounds of convection, Flash Flooding would be the bigger concern along with the rounds of damaging winds. Isolated tornadoes would be possible.
 
 As of 12:42 PM EDT, severe watches are already in effect for northern parts of the Louisville news broadcast area as the squall line edges towards Bloomington:
 
