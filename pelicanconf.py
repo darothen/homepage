@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 DEFAULT_LANG = 'en'
 
 AUTHOR = 'Daniel Rothenberg'
-SITENAME = "Daniel Rothenberg's Homepage"
+SITENAME = "daniel rothenberg"
 SITEURL = 'http://www.danielrothenberg.com'
 
 # Time and dates

@@ -1,6 +1,11 @@
-# Pelican Server files
+# Pelican misc files
 *.pid
+output/
+
 
 # Python files
 *.pyc
 __pycache__/*
+
+# OSX files
+.DS_Store
