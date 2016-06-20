@@ -7,7 +7,12 @@ DEFAULT_LANG = 'en'
 AUTHOR = 'Daniel Rothenberg'
 SITENAME = "Daniel Rothenberg's Homepage"
 SITEURL = 'http://www.danielrothenberg.com'
+
+# Time and dates
 TIMEZONE = 'US/Eastern'
+DATE_FORMATS = {
+    'en': "%B %d, %Y"
+}
 
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
@@ -23,7 +28,6 @@ TRANSLATION_FEED_ATOM = None
 FEED_ALL_RSS = None # "feeds/all.rss.xml"
 CATEGORY_FEED_RSS = None # "feeds/%s.rss.xml"
 
-
 # Blogroll
 LINKS =  ()
 
@@ -37,12 +41,18 @@ SOCIAL = (
     ('orcid', 'http://orcid.org/0000-0002-8270-4831'),
 )
 
-# Themes
-THEME = "pelican-bootstrap3"
+# Theming
+THEME = "pelican-darothen"
 BOOTSTRAP_THEME = "yeti"
+HIDE_SIDEBAR = True
 
 # Static content
 STATIC_PATHS = ['images', ]
+
+# Page / Blog configuration
+DISPLAY_PAGES_ON_MENU = True
+DEFAULT_CATEGORY = 'blog'
+USE_FOLDER_AS_CATEGORY = True
 
 ARTICLE_URL = "blog/{date:%Y}/{date:%b}/{slug}/"
 ARTICLE_SAVE_AS =  "blog/{date:%Y}/{date:%b}/{slug}/index.html"

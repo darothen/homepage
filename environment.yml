@@ -6,13 +6,6 @@ channels:
 dependencies:
 - anaconda-client=1.4.0=py35_0
 - clyent=1.2.2=py35_0
-- conda-forge::blinker=1.4=py35_0
-- conda-forge::feedgenerator=1.8=py35_0
-- conda-forge::ghp-import=0.4.1=py35_0
-- conda-forge::jinja2=2.8=py35_0
-- conda-forge::markupsafe=0.18=py35_0
-- conda-forge::pelican=3.3=py35_0
-- conda-forge::pygments=1.6=py35_0
 - docutils=0.12=py35_2
 - markdown=2.6.6=py35_0
 - openssl=1.0.2h=1

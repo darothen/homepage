@@ -19,7 +19,7 @@ The thing is *bleeding* fast on a GPU, but is so unbearably slow on a CPU (using
 
 We start with a simple data structure for encapsulating information for each of our spheres. The easiest way to bind such a structure from the CPU->GPU in Python is a NumPy record array using a user-defined datatype:
 
-```language-python
+``` python
 Sphere = np.dtype([
     # RGB color values (floats from [0, 1])
     ('r', 'f4'),  ('g', 'f4'), ('b', 'f4'),
@@ -34,7 +34,7 @@ The only fancy thing we have to do here is bind our `Sphere` type to something N
 
 Two helper functions will come in handy in our calculation. First, it would be nice to have a function that computes whether or not a ray starting at (x, y) actually hits a given sphere. We write a `hit()` method compute this:
 
-```language-python
+``` python
 def hit(ox, oy, sph):
     """ Compute whether a ray parallel to the z-axis originating at
     (ox, oy, INF) will intersect a given sphere; if so, return the
@@ -54,7 +54,7 @@ Note that we use an attribute syntax to get `Sphere` data, rather than a `dict`-
 
 Now, we need a function that iterates over *all* of the spheres to compute potential intersections at each observer pixel. This is the core 'kernel' which we'll run on the GPU, and it would look something like this:
 
-``` language-python
+``` python
 @cuda.jit(argtypes=(Sphere_t[:], int16[:,:,:]))
 def kernel(spheres, bitmap):
 
@@ -97,7 +97,7 @@ There's nothing fancy going on here. NumbaPro gives us an alias (`cuda.grid()`) 
 
 Just like in pure CUDA, we need to manage data transfers between host and device. For instance, we can initialize some device memory for working with our resulting image and storing our Spheres:
 
-``` language-python
+``` python
     # Create a container for the pixel RGBA information of our image
     bitmap = np.zeros([DIM, DIM, 4], dtype=np.int16)
 
@@ -117,7 +117,7 @@ The command for `bitmap` is similar to a `malloc` and assignment all in one. To 
 
 At this point, the device has all the data we need to run the calculation, so we do can go ahead and call the `kernel`:
 
-``` language-python
+``` python
     grids = (DIM/16, DIM/16)
     threads = (16, 16)
 
@@ -132,7 +132,7 @@ In the first two commands, we set up a grid of (DIM/16 x DIM/16) blocks, each wi
 
 Then, we can render our image using matplotlib:
 
-``` language-python
+``` python
     bitmap = np.transpose(bitmap/255., (1, 0, 2)) # swap image's x-y axes
     plt.imshow(bitmap)
 ```
@@ -144,8 +144,6 @@ and voila!
 Amazingly, the NumbaPro-generated CUDA solution performs within a factor of 2 against the original CUDA implementation, including memory transfers. That's pretty amazing considering it's doing everything automatically!
 
 Full code for this toy project is available as a [gist](https://gist.github.com/darothen/f53bb3e40edbceb38904).
-
----
 
 <!--Footnotes-->
 [^1]: You can see in the full code that we compute vertical rays from +/- scene Z-infinity for each pixel. We could easily improve on this by pre-computing the x-y coverage of the sphere ensemble and only compute rays for pixels we *know* will intercept a sphere, and then only sample the top "layer" of spheres by inspecting their z-position and radii.
