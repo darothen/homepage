@@ -45,6 +45,8 @@ SOCIAL = (
 THEME = "pelican-darothen"
 BOOTSTRAP_THEME = "yeti"
 HIDE_SIDEBAR = True
+DISPLAY_ARTICLE_INFO_ON_INDEX = True
+BANNER = "/images/old/cropped-copy-header_final.jpg"
 
 # Static content
 STATIC_PATHS = ['images', ]
@@ -53,6 +55,15 @@ STATIC_PATHS = ['images', ]
 DISPLAY_PAGES_ON_MENU = True
 DEFAULT_CATEGORY = 'blog'
 USE_FOLDER_AS_CATEGORY = True
+
+DIRECT_TEMPLATES = [
+    'index', 
+]
+PAGINATED_DIRECT_TEMPLATES = [
+    'blog',
+]
+ARCHIVES_SAVE_AS = 'archives.html'
+
 
 ARTICLE_URL = "blog/{date:%Y}/{date:%b}/{slug}/"
 ARTICLE_SAVE_AS =  "blog/{date:%Y}/{date:%b}/{slug}/index.html"

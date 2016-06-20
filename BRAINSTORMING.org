@@ -19,7 +19,8 @@
   4. [[http://terriyu.info/blog/posts/2013/07/pelican-setup/][Terri Yu]]
      1. [[http://terriyu.info/blog/posts/2016/04/updated-pelican-theme-2016/][on theming]]
   5. [[http://www.ashander.info/][Jaime Ashande]]
+  6. [[http://raichev.net/index.html][Alex Raichev]]
 
-  6. [[http://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html][Pelican Static Blog Setup]]
-  7. [[http://beneathdata.com/how-to/how-i-built-this-website/][Beneath Data - How I Built This Website]]
-  8. [[https://www.taniarascia.com/what-is-bootstrap-and-how-do-i-use-it/][Bootstrap - great tutorial]]
+  7. [[http://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html][Pelican Static Blog Setup]]
+  8. [[http://beneathdata.com/how-to/how-i-built-this-website/][Beneath Data - How I Built This Website]]
+  9. [[https://www.taniarascia.com/what-is-bootstrap-and-how-do-i-use-it/][Bootstrap - great tutorial]]
