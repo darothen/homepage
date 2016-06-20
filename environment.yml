@@ -1,0 +1,43 @@
+name: blog
+channels:
+  - r
+  - defaults
+  - darothen
+dependencies:
+- anaconda-client=1.4.0=py35_0
+- clyent=1.2.2=py35_0
+- conda-forge::blinker=1.4=py35_0
+- conda-forge::feedgenerator=1.8=py35_0
+- conda-forge::ghp-import=0.4.1=py35_0
+- conda-forge::jinja2=2.8=py35_0
+- conda-forge::markupsafe=0.18=py35_0
+- conda-forge::pelican=3.3=py35_0
+- conda-forge::pygments=1.6=py35_0
+- docutils=0.12=py35_2
+- markdown=2.6.6=py35_0
+- openssl=1.0.2h=1
+- pip=8.1.2=py35_0
+- python=3.5.1=0
+- python-dateutil=2.5.3=py35_0
+- pytz=2016.4=py35_0
+- pyyaml=3.11=py35_4
+- readline=6.2=2
+- requests=2.10.0=py35_0
+- setuptools=23.0.0=py35_0
+- six=1.10.0=py35_0
+- sqlite=3.13.0=0
+- tk=8.5.18=0
+- unidecode=0.04.19=py35_0
+- wheel=0.29.0=py35_0
+- xz=5.0.5=1
+- yaml=0.1.6=0
+- zlib=1.2.8=3
+- pip:
+  - blinker==1.4
+  - feedgenerator==1.8
+  - ghp-import==0.4.1
+  - jinja2==2.8
+  - markupsafe==0.23
+  - pelican==3.6.3
+  - pygments==2.1.3
+prefix: /home/daniel/miniconda/envs/blog
