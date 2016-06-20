@@ -1,0 +1,25 @@
+#+TITLE: Website Brainstorming
+
+* Content
+
+** Pages
+
+** Blog
+
+
+* Ideas
+  - Instead of a generic "Publications/Talks" section, why not have each talk or publication get its own special blog post? That blog post can have a special template, with places for DOI, Journal, Conference, etc., and feature the abstract of the work, some short comments, and a link to code, slides, FigShare/Slideshare, etc. These can all be under a "pub" category, with subcategories for talks versus presentations, "pub/talks", "pubs/writing"
+  - Drafting blog concept via [[https://docs.google.com/presentation/d/1V_be2L73m5VFasAfNdN-w1iwme3VMrwQmCkNAKN62UM/edit#slide%3Did.g14767fafa1_1_30][Google Slides]]
+
+* Links 
+  1. [[http://www.mugekomurcu.com/][Muge Komurcu]] -
+  2. [[http://staff.washington.edu/jakevdp/][Jake VanderPlas]] -
+  3. [[http://chdoig.github.io/][Christine Doig]]
+     1. [[https://github.com/chdoig/pelican-bootstrap3-lovers][theme github]]
+  4. [[http://terriyu.info/blog/posts/2013/07/pelican-setup/][Terri Yu]]
+     1. [[http://terriyu.info/blog/posts/2016/04/updated-pelican-theme-2016/][on theming]]
+  5. [[http://www.ashander.info/][Jaime Ashande]]
+
+  6. [[http://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html][Pelican Static Blog Setup]]
+  7. [[http://beneathdata.com/how-to/how-i-built-this-website/][Beneath Data - How I Built This Website]]
+  8. [[https://www.taniarascia.com/what-is-bootstrap-and-how-do-i-use-it/][Bootstrap - great tutorial]]
