@@ -46,7 +46,7 @@ THEME = "pelican-darothen"
 BOOTSTRAP_THEME = "yeti"
 HIDE_SIDEBAR = True
 DISPLAY_ARTICLE_INFO_ON_INDEX = True
-BANNER = "/images/old/cropped-copy-header_final.jpg"
+BANNER = "/images/2015/06/cropped-copy-header_final.jpg"
 
 # Static content
 STATIC_PATHS = ['images', ]
@@ -57,7 +57,7 @@ DEFAULT_CATEGORY = 'blog'
 USE_FOLDER_AS_CATEGORY = True
 
 DIRECT_TEMPLATES = [
-    'index', 
+    'index',
 ]
 PAGINATED_DIRECT_TEMPLATES = [
     'blog',
