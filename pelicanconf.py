@@ -46,7 +46,7 @@ THEME = "pelican-darothen"
 BOOTSTRAP_THEME = "yeti"
 HIDE_SIDEBAR = True
 DISPLAY_ARTICLE_INFO_ON_INDEX = True
-BANNER = "/images/2015/06/cropped-copy-header_final.jpg"
+BANNER = "/images/2015/06/cropped-copy-header_final-bordered.jpg"
 
 # Static content
 STATIC_PATHS = ['images', ]
