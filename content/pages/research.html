@@ -1,0 +1,105 @@
+<html>
+<head>
+   <title>Research</title>
+   <meta name="summary" content="Overviews of some past and present research interests" />
+   <meta name="icon" content="fa-flask"/>
+</head>
+<body>
+
+<div class="row">
+  <div class="col-lg-12 text-left">
+     <h1 class="page-heading">Research</h1>
+     <h2 class="page-subheading">Although I'm originally trained as a meteorologist, my research career has focused on atmospheric physics and chemistry as well as climate. These are some highlights of my current and past research portfolio.</h2>
+  </div>
+</div>
+
+
+<hr class="page-block-separator">
+
+<div class="row page-block">
+   <h3>Aerosol-Cloud Interactions and Aerosol Indirect Effects</h3>
+
+   <p>By mediating the formation of clouds, aerosols play a fundamental role in the climate system. Changes in aerosol emissions (from natural or anthropogenic sources) can modify clouds, precipitation, and initiate a slew of processes which feedback on the global climate. Unfortunately, after decades of research into these phenomena, we still have only a poor understanding of the magnitude of climate impacts from aerosol.</p>
+
+   <div class="row">
+   <figure class="inline-figure col-md-6 col-md-offset-3">
+      <img src="{filename}/images/pages/Fig7-19.jpg"
+           alt="Historical and recent estimates of the magnitude of aerosol indirect effects from both models and observations."
+           width="600" align="middle"></img>
+      <figcaption>Historical and recent estimates of the magnitude of aerosol indirect effects from both models and observations. From the <a href="http://www.ipcc.ch/report/ar5/wg1/">IPCC AR5, Chapter 7</a></figcaption>
+   </figure>
+   </div>
+
+   <p>In my dissertation (conducted under the supervision of <a href="http://web.mit.edu/wangc/">Chien Wang</a> at MIT), I investigated how the process of droplet activation - the most fundamental aerosol-cloud interaction - contributed to uncertainty in modeled estimates of the indirect effect. We found that the combination of aerosol approximations and activation scheme was a <emph>huge</emph> determinant in how strong a model's indirect effect could be, and that this was an irreducible complexity in the modeling system. It's quite possible that models will never reproduce the observed indirect effect, due to the basic assumptions we have to make when constructing aerosol-climate models!</p>
+
+   <p>To study the interplay of aerosol-cloud interactions and the indirect effect, I generate timeseries of metrics of the two from model output, and investigate them when averaged over different temporal and spatial scales. This sort of work is a bit tedious, so much of my time is spent coming up with ways to visuaize these relationships and breaking them down over different time periods and regions of the globe. At the end of the day, though, we hope to identify particular phenomena which exert large influences on the indirect effect, so that future observational campaigns may investigate them in detail and provide better data to constrain our physical parameterizations and process models.</p>
+
+   <br/>
+
+   <h4>Selected Publications/Talks</h4>
+   <ul class="publication-list">
+      <li><strong>Rothenberg, Daniel</strong> and Chien Wang: Development and Evaluation of ametamodel for droplet activation in a mixing-state-resolving coupled aerosol-climate model. (<emph>in prep</emph>)</li>
+      <li><strong>Rothenberg, D.</strong>, Wang, C., and Avramov, A.: Impact of activation parameterizations on aerosol-cloud interactions in a global climate model. (<emph>in prep</emph>)</li>
+      <li><strong>Rothenberg, D.M</strong>, Avramov, A., Wang, C., Garimella, S., Wolf, M., and Cziczo, D. Understanding Fun- damental Aerosol-Cloud Interactions and their Contributions to the Aerosol Indirect Effect. NOAA Geophysical Fluid Dynamics Laboratory. Princeton, NJ. 2016</li>
+      <li><strong>Rothenberg, D.</strong>, Wang, C. and Avramov, A.:  <a href="http://figshare.com/articles/poster_pdf/1534717">Impacts of Droplet Activation on Fast and Slow Responses in a Coupled Aerosol-Climate Model</a>. Gordon Research Seminar/Conference. Bates College, ME. 2015</li>
+      <li><strong>Rothenberg, Daniel</strong>, Chien Wang and Alexander Avramov. <a href="https://ams.confex.com/ams/96Annual/webprogram/Paper289914.html">On the Sensitivity of Model-derived Estimates of Aerosol Indirect Effects and Forcings to Activation Schemes</a>. 96th Annual Meeting of the American Meteorological Society, Eighth Symposium on Aerosol-Cloud-Climate Interactions. New Orleans, LA. 2016.</li>
+      </ul>
+</div>
+
+<hr class="page-block-separator">
+
+<div class="row page-block">
+   <h3>Droplet Activation</h3>
+
+   <p>Cloud droplet formation in the atmosphere is mediated by the presence of aerosol particles; without the surface area that these particles provide, droplets would have a much harder time forming, since the thermodynamics of that process would require very large relative humidities on the order of a few hundred percent. The process where water vapor condenses on particles and ultimately nucleates new cloud drops is known as "droplet activation," and is a critical process that must be considered when simulating clouds within weather predication or global climate models.</p>
+
+   <p>The tricky thing is that activation is a dynamic process. Condensation releases latent heat, which warms the air surrounding particles and limits how high the relative humidity can climb around them. The net result is that when a parcel of air rises in the atmosphere on its way to forming a cloud, only a portion of the aerosol particles will generate cloud droplets; the rest will be stuck as haze particles. Predicting exactly how many particles nucleate cloud droplets from a given ambient aerosol population and background meteorology is a critical first step in resolving the aerosol indirect effect on climate.</p>
+
+   <p>Because this process is so important for the climate system, we try to include it in climate models. Unfortunately, this is problematic; activation takes place on timescales of minutes (and condensation on fractions of a second!) and is a distinctly sub-grid scale phenomenon. It's easy enough to write a succinct equation that describes droplet activation in detail:</p>
+
+   $$\frac{\alpha V}{\gamma} = \frac{4\pi\rho_w}{\rho_a}G S_\text{max}\int\limits_0^{S_\text{max}}\left(r^2(t_\text{act}) + 2G\int\limits_{t_\text{act}}^{t_\text{max}} S dt \right)^{1/2}\frac{dN}{dS_c}dS_c$$
+
+   <p>Using techniques borrowed from the uncertainty quantification literature, I developed a framework for building efficient parameterizations of this process which can be applied to any global aerosol-climate model. Using an idealized, single-mode aerosol description, I studied the dynamics of activation and its sensitivity to aerosol and meteorological variables. Then, I implemented several parameterizations built using this framework into the CESM-MARC to study aerosol-cloud interactions in more detail. Several modeling groups have expressed interest in deploying parameterizations using this technique in their own models, and I'm applying the framework to develop other physical parameterizations, including microphysical processes and radiative interactions.</p>
+
+   <br/>
+
+   <h4>Selected Publications/Talks</h4>
+   <ul class="publication-list">
+       <li><strong>Rothenberg, D.</strong>, Wang, C., and Avramov, A.: Impact of activation parameterizations on aerosol-cloud interactions in a global climate model. (<emph>in prep</emph>)</li>
+      <li><strong>Rothenberg, Daniel</strong> and Chien Wang: <a href="http://dx.doi.org/10.1175/JAS-D-15-0223.1">Metamodeling of Droplet Activation for Global Climate Models</a>, J. Atmos. Sci., 73, 1255–1272. doi:10.1175/JAS-D-15-0223.1, 2016</li>
+      <li><strong>Rothenberg, Daniel</strong>, Chien Wang and Alexander Avramov. Evaluating Advanced Aerosol Activation Treatments in a Coupled Climate/Mixing-State Resolving Aerosol Model. 95th Annual Meeting of the American Meteorological Society, 7th Symposium on Aerosol-Cloud-Climate Interactions. Phoenix, AX. 2015.</li>
+      <li><strong>Rothenberg, Daniel</strong> and Chien Wang. Evaluating the Role of Aerosol Mixing State in Cloud Droplet Nucleation using a New Activation Parameterization. American Geophysical Union Fall Meeting, (A34D-03). 2013.</li>
+   </ul>
+
+</div>
+
+<hr class="page-block-separator">
+
+<div class="row page-block">
+   <h3>Aerosol Impacts on Climate and Biogeochemistry</h3>
+
+   <p>During my undergrad at Cornell I worked with <a href="http://www.geo.cornell.edu/eas/PeoplePlaces/Faculty/mahowald/">Natalie Mahowald</a> on a few research project using a (then) cutting-edge global model which was one of the first to feature coupled carbon and nitrogen cycles on the land in the ocean. This model allowed us to study, in detail, ecosystem feedbacks on climate change. How does the global carbon cycle respond to warming? How will the terrestrial/ecosystem sink of carbon dioxide adapt to future climate, and will it be more efficient (negative feedback) or less efficient (positive feedback)?</p>
+
+   <p>To investigate these questions in detail, I analyzed our model's response to volcanic eruptions in transient climate change simulations. These eruptions perturb the climate system by emitting sulfate particles into the stratosphere, which temporarily increase the planetary albedo and produces a short period of global cooling. The climate/ecosystem responses in the model could be useful proxies to understand how precipitation and temperature stresses perturb the carbon cycle.</p>
+
+   <br/>
+
+   <h4>Selected Publications/Talks</h4>
+
+   <ul class="publication-list">
+      <li><strong>Rothenberg, D.</strong>, Mahowald, N., Lindsay, K., Doney, S. C., Moore, J. K., and Thornton, P.: <a href="http://dx.doi.org/10.5194/esd-3-121-2012">Volcano impacts on climate and biogeochemistry in a coupled carbon–climate model</a>, Earth Syst. Dynam., 3, 121-136, doi:10.5194/esd-3-121-2012, 2012.</li>
+      <li>Mahowald, N., Lindsay, K., <strong>Rothenberg, D.</strong>, Doney, S. C., Moore, J. K., Thornton, P., Randerson, J. T., and Jones, C. D.: <a href="http://dx.doi.org/10.5194/bg-8-387-2011">Desert dust and anthropogenic aerosol interactions in the Community Climate System Model coupled-carbon-climate model</a>, Biogeosciences, 8, 387-414, doi:10.5194/bg-8-387-2011, 2011.</li>
+      <li>Mahowald, N. M., Kloster, S., Engelstaedter, S., Moore, J. K., Mukhopadhyay, S., McConnell, J. R., Albani, S., Doney, S. C., Bhattacharya, A., Curran, M. A. J., Flanner, M. G., Hoffman, F. M., Lawrence, D. M., Lindsay, K., Mayewski, P. A., Neff, J., <strong>Rothenberg, D.</strong>, Thomas, E., Thornton, P. E., and Zender, C. S.: <a href="http://dx.doi.org/10.5194/acp-10-10875-2010">Observed 20th century desert dust variability: impact on climate and biogeochemistry</a>, Atmos. Chem. Phys., 10, 10875-10893, doi:10.5194/acp-10-10875-2010, 2010.</li>
+   </ul>
+</div>
+
+<div class="row page-block">
+   <h3>Other Research</h3>
+   <ul>
+      <li><strong>Ice Nucleation Measurements</strong> as a participant in the Fifth Ice Nucleation Workshop in Karlsruhe, Germany, aiding Sarvesh Garimella in the operation of SPIN, the first commercially-available continuous flow diffusion chamber for measuring ice nucleation potential of aerosol particles.</li>
+      <li><strong>Global Cloud Resolving Modeling</strong> as part of a summer research program at the Center for Multiscale Modeling of Atmospheric Processes, under the supervision of <a href="http://www.atmos.colostate.edu/faculty/randall.php">Dave Randall; I implemented a baroclinic instability test case on a new atmospheric model dynamical core, and assessed its performance.</a></li>
+   </ul>
+</div>
+
+</body>
+</html>

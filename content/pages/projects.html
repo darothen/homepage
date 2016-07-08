@@ -1,103 +1,96 @@
 <html>
-  <head>
-    <title>Projects</title>
-    <meta name="summary" content="Gallery/overview of coding projects" />
-  </head>
-  <body>
-    <section id="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-left">
-            <h1 class="page-heading">Projects</h1>
-            <h2 class="page-subheading">
-              These are some of my recent and active coding projects, research-related or otherwise. Check my <a href="https://github.com/darothen/">public github</a> or <a href="https://github.mit.edu/darothen">MIT github</a> for more.
-            </h2>
+<head>
+   <title>Projects</title>
+   <meta name="summary" content="Gallery/overview of coding projects" />
+   <meta name="icon" content="fa-laptop"/>
+</head>
+<body>
+
+  <div class="row">
+    <div class="col-lg-12 text-left">
+      <h1 class="page-heading">Projects</h1>
+      <h2 class="page-subheading">
+        These are some of my recent and active coding projects, research-related or otherwise. Check my <a href="https://github.com/darothen/">public github</a> or <a href="https://github.mit.edu/darothen">MIT github</a> for more.
+      </h2>
+    </div>
+  </div>
+
+  <hr class="page-block-separator">
+
+  <div class="row page-block">
+    <div class="col-md-4 col-sm-6 page-block-fig">
+      <img src="{filename}/images/pages/parcel_traces_vertical.png"
+           alt="Simulated activation of a mixed sea-salt and sulfate population"></img>
+    </div>
+    <div class="col-md-8 col-sm-6 page-block-summary">
+      <h3><a href="http://www.github.com/darothen/parcel_model">parcel_model</a></h3>
+      <p>One of the most fundamental tools in the arsenal of an atmospheric physicist studying cloud phenomena is the <b>parcel model</b>, a 0-dimensional representation of an ascending plume of air. Parcel models model the thermodynamic evolution of such a plume, and can be used to studying many physical phenomena. To aid my research in developing novel aerosol-cloud interaction schemes for atmospheric models, I've developed an extensible warm-cloud parcel model with a simple physico-chemical representation of droplets. With this tool, one can simulate droplet activation dynamics in detail, and compare against parameterizations or observations from the field and laboratory.</p>
+
+      <h4>Highlights</h4>
+      <ul>
+        <li>Written in Python, with either a numba or Cython core for solving model equations</li>
+        <li>Library, command-line, and file I/O interfaces for running simulations</li>
+        <li>Multiple output formats and options</li>
+        <li>Includes library of activation schemes, thermodynamic functions, and aerosol/droplet size distribution tools</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="page-block-separator">
+
+  <div class="row page-block">
+    <div class="col-md-7 col page-block-fig">
+      <img src="{filename}/images/pages/marc_analysis_example.png"
+           alt="Intercomparison of AeroCom model predicted cloud ice burdens"></img>
           </div>
-        </div>
+    <div class="col-md-5 page-block-summary">
+      <h3><a href="http://www.github.com/darothen/marc_analysis">marc_analysis</a></h3>
+      <p>This library contains many helpful utilities for analyzing CESM-MARC experiment output, including an experiment-manager, vertical interpolation routines, cartographic plotting, and much more. Many of the functions are wrapped in command-line scripts. <b>Note</b> - this is an actively-evolving project serving my research needs and will need a thorough re-write/re-organization before others can take advantage of it!</p>
 
-        <hr class="page-block-separator">
-
-        <div class="row page-block">
-          <div class="col-md-4 col-sm-6 page-block-fig">
-            <img src="{filename}/images/pages/parcel_traces_vertical.png"
-                 alt="Simulated activation of a mixed sea-salt and sulfate population"></img>
-          </div>
-          <div class="col-md-8 col-sm-6 page-block-summary">
-            <h3><a href="http://www.github.com/darothen/parcel_model">parcel_model</a></h3>
-            <p>One of the most fundamental tools in the arsenal of an atmospheric physicist studying cloud phenomena is the <b>parcel model</b>, a 0-dimensional representation of an ascending plume of air. Parcel models model the thermodynamic evolution of such a plume, and can be used to studying many physical phenomena. To aid my research in developing novel aerosol-cloud interaction schemes for atmospheric models, I've developed an extensible warm-cloud parcel model with a simple physico-chemical representation of droplets. With this tool, one can simulate droplet activation dynamics in detail, and compare against parameterizations or observations from the field and laboratory.</p>
-
-            <h4>Highlights</h4>
-            <ul>
-              <li>Written in Python, with either a numba or Cython core for solving model equations</li>
-              <li>Library, command-line, and file I/O interfaces for running simulations</li>
-              <li>Multiple output formats and options</li>
-              <li>Includes library of activation schemes, thermodynamic functions, and aerosol/droplet size distribution tools</li>
-            </ul>
-          </div>
-        </div>
-
-        <hr class="page-block-separator">
-
-        <div class="row page-block">
-          <div class="col-md-4 col-sm-6 page-block-fig">
-            <!--
-            <img src="/images/pages/parcel_traces_vertical.png"
-                 alt="Simulated activation of a mixed sea-salt and sulfate population"></img>
-            -->
-          </div>
-          <div class="col-md-8 col-sm-6 page-block-summary">
-            <h3><a href="http://www.github.com/darothen/marc_analysis">marc_analysis</a></h3>
-            <p>This library contains many helpful utilities for analyzing CESM-MARC experiment output, including an experiment-manager, vertical interpolation routines, cartographic plotting, and much more. Many of the functions are wrapped in command-line scripts. <b>Note</b> - this is an actively-evolving project serving my research needs and will need a thorough re-write/re-organization before others can take advantage of it!</p>
-
-            <h4>Highlights</h4>
-            <ul>
-              <li>Built on top of Python/<a href="http://xarray.pydata.org">xarray</a>/Cartopy</li>
-              <li>Command-line utilities for multi-experiment NetCDF file manipulation and comparison plotting</li>
-              <li>Wraps additional <a href="http://dask.pydata.org">dask</a> routines for out-of-core computing on very large climate model output datasets</li>
-            </ul>
-          </div>
-        </div>
+      <h4>Highlights</h4>
+      <ul>
+        <li>Built on top of Python/<a href="http://xarray.pydata.org">xarray</a>/Cartopy</li>
+        <li>Command-line utilities for multi-experiment NetCDF file manipulation and comparison plotting</li>
+        <li>Wraps additional <a href="http://dask.pydata.org">dask</a> routines for out-of-core computing on very large climate model output datasets</li>
+      </ul>
+    </div>
+  </div>
 
 
-        <hr class="page-block-separator">
+  <hr class="page-block-separator">
 
-        <div class="row page-block">
-          <div class="col-md-4 col-sm-6 page-block-fig">
-            <!--
-            <img src="/images/pages/parcel_traces_vertical.png"
-                 alt="Simulated activation of a mixed sea-salt and sulfate population"></img>
-            -->
-          </div>
-          <div class="col-md-8 col-sm-6 page-block-summary">
-            <h3><a href="http://www.github.com/darothen/sd-coal">sd-coal</a></h3>
-            <p>Capturing the physics of how droplets interact within a cloud and how their size distribution changes over time is a challenging problem for atmospheric modelers. Droplet collision and coalescence is often very crudely parameterized in global models, but even detailed spectral bin models have issues with faithfully capturing their effects. This model implements the Superdroplet method using an object-oriented framework to solve the stochastic collision/coalescence equation and evolve a droplet size distribution over time for some simple (non-turbulent) collision kernels.</p>
+  <div class="row page-block">
+    <div class="col-md-4 col-sm-6 page-block-fig">
+      <img src="{filename}/images/pages/anim_hall2.gif"
+           alt="Simulation of secondary droplet mode forming from initial cloudwater population"></img>
+    </div>
+    <div class="col-md-8 col-sm-6 page-block-summary">
+      <h3><a href="http://www.github.com/darothen/sd-coal">sd-coal</a></h3>
+      <p>Capturing the physics of how droplets interact within a cloud and how their size distribution changes over time is a challenging problem for atmospheric modelers. Droplet collision and coalescence is often very crudely parameterized in global models, but even detailed spectral bin models have issues with faithfully capturing their effects. This model implements the Superdroplet method using an object-oriented framework to solve the stochastic collision/coalescence equation and evolve a droplet size distribution over time for some simple (non-turbulent) collision kernels.</p>
 
-            <h4>Highlights</h4>
-            <ul>
-              <li>Multiple versions - <a href="">Python+Cython</a>, C++, Fortran 2008,  Julia, and Chapel (<emph>coming soon</emph>)</li>
-              <li>Straightforward configuration with ASCII output (consistent between implementations)</li>
-              <li>Go-to "hello, world" application for OOP/scientific computing</li>
-            </ul>
-          </div>
-        </div>
+      <h4>Highlights</h4>
+      <ul>
+        <li>Multiple versions - <a href="">Python+Cython</a>, C++, Fortran 2008,  Julia, and Chapel (<emph>coming soon</emph>)</li>
+        <li>Straightforward configuration with ASCII output (consistent between implementations)</li>
+        <li>Go-to "hello, world" application for OOP/scientific computing</li>
+      </ul>
+    </div>
+  </div>
 
-        <hr class="page-block-separator">
+  <hr class="page-block-separator">
 
-        <div class="row page-block">
-          <div class="col-md-4 col-sm-6 page-block-fig">
-            <img src="{filename}/images/pages/homogenization_example.png"
-                 alt="Comparison between Python PHA implementation and reference Fortran for two stations"></img>
-          </div>
-          <div class="col-md-8 col-sm-6 page-block-summary">
-            <h3><a href="http://www.github.com/darothen/ccf-homogenization">ccf-homogenization</a></h3>
-            <p>In 2011, I participated in the <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> under the mentorship of the <a href="http://climatecode.org/">Climate Code Foundation</a>. My goal was to open-source and de-obfuscate a complex piece of Fortran code that quality-controlled the United States' historical surface temperature record by applying statistical analyses to detect breakpoints and anomalous trends in the network of station observations. We had broader goals of developing alternative homogenization algorithms (building a library) and of building a platform for meta-analysis of the homogenization technique for assessing statistical uncertainty, but the initial goal proved very daunting and time-consuming.</p>
+  <div class="row page-block">
+    <div class="col-md-6 page-block-fig">
+      <img src="{filename}/images/pages/homogenization_example.png"
+           alt="Comparison between Python PHA implementation and reference Fortran for two stations"></img>
+    </div>
+    <div class="col-md-6 page-block-summary">
+      <h3><a href="http://www.github.com/darothen/ccf-homogenization">ccf-homogenization</a></h3>
+      <p>In 2011, I participated in the <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> under the mentorship of the <a href="http://climatecode.org/">Climate Code Foundation</a>. My goal was to open-source and de-obfuscate a complex piece of Fortran code that quality-controlled the United States' historical surface temperature record by applying statistical analyses to detect breakpoints and anomalous trends in the network of station observations. We had broader goals of developing alternative homogenization algorithms (building a library) and of building a platform for meta-analysis of the homogenization technique for assessing statistical uncertainty, but the initial goal proved very daunting and time-consuming.</p>
 
-            <p>Critically, this project was a wake-up call in how important software engineering is when developing scientific codes - especially those in operational or production contexts. This project identified several major bugs in the original PHA algorithm, which ultimately contributed to a small increase in our best estimate of how much the US warmed over the past century!</p>
+      <p>Critically, this project was a wake-up call in how important software engineering is when developing scientific codes - especially those in operational or production contexts. This project identified several major bugs in the original PHA algorithm, which ultimately contributed to a small increase in our best estimate of how much the US warmed over the past century!</p>
 
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </body>
+    </div>
+  </div>
+</body>
 </html>
