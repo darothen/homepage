@@ -1,0 +1,4 @@
+[submodule "pelican-darothen"]
+	path = pelican-darothen
+	url = https://github.com/darothen/pelican-darothen.git
+	branch = master
