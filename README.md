@@ -15,3 +15,7 @@ the resulting environment, `blog`, can be activated with
 ``` shell
 $ source activate blog
 ```
+
+## Development
+
+For development, simply start a dev server using the supplied Makefile via `make devserver` and navigate to [localhost:8000/output/](). You should hit the landing page.
