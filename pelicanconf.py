@@ -57,7 +57,7 @@ DEFAULT_CATEGORY = 'blog'
 USE_FOLDER_AS_CATEGORY = True
 
 DIRECT_TEMPLATES = [
-    'index',
+    'index', 'archives',
 ]
 PAGINATED_DIRECT_TEMPLATES = [
     'blog',

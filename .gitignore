@@ -2,6 +2,8 @@
 *.pid
 output/
 
+# Theme submodule
+pelican-darothen/
 
 # Python files
 *.pyc
