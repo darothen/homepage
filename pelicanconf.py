@@ -69,3 +69,12 @@ ARTICLE_URL = "blog/{date:%Y}/{date:%b}/{slug}/"
 ARTICLE_SAVE_AS =  "blog/{date:%Y}/{date:%b}/{slug}/index.html"
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
+
+
+# Plugins
+PLUGIN_PATHS = ['pelican-plugins', ]
+PLUGINS = ['liquid_tags.notebook', ]
+try:
+    EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8')
+except:
+    pass
