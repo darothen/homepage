@@ -12,7 +12,7 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=rothenberg.webfactional.com
+SSH_HOST=web625.webfaction.com
 SSH_PORT=22
 SSH_USER=rothenberg
 SSH_TARGET_DIR=/home/rothenberg/webapps/danielrothenberg
