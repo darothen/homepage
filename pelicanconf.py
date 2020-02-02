@@ -59,7 +59,7 @@ USE_FOLDER_AS_CATEGORY = True
 DIRECT_TEMPLATES = [
     'index', 'archives',
 ]
-PAGINATED_DIRECT_TEMPLATES = [
+PAGINATED_TEMPLATES = [
     'blog',
 ]
 ARCHIVES_SAVE_AS = 'archives.html'

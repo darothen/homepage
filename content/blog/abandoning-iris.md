@@ -19,11 +19,11 @@ Luckily, two major toolkits came to maturity around this time: [cartopy](http://
 
 The script which generates this figure is incredibly simple; suddenly, you could build GIS-type graphics with minimal effort! Within cartopy, you can also easily combine geographical data from many different sources. This quick plot I made for a thesis committee meeting combines two completely different MODIS satellite data sources and output from the online HYSPLIT calculator:
 
-![fire map april 2011]({filename}/images/2015/07/MODIS_CentAm_Fires_AOD_Hysplit_4_24.png)
+![fire map april 2011]({static}/images/2015/07/MODIS_CentAm_Fires_AOD_Hysplit_4_24.png)
 
 As another example, here's a visualization combining some GOES-R IR satellite imagery with timeseries data from a flight during the [MACPEX field campaign](http://www-air.larc.nasa.gov/missions/macpex/macpex.html):
 
-![MACPEX GOES-R IR]({filename}/images/2015/07/IR-4_flightpath_20110425_183229.png)
+![MACPEX GOES-R IR]({static}/images/2015/07/IR-4_flightpath_20110425_183229.png)
 
 Iris is a toolkit which integrates directly with cartopy by wrapping geophysical data sets. Rather than load a dataset directly using a low-level interface, iris exposes a different API which allows you to manipulated data more semantically. You can slice through dimensions, perform aggregations or apply functions over them, and generally pipeline your analyses in such a way that you preserve the metadata attached to your dataset. It can also handle multi-file datasets by seamlessly concatenating over record dimensions. But best of all, it wraps the matplotlib+cartopy visualization ecosystem so that you can very quickly and easily generate maps of your data.
 

@@ -27,7 +27,7 @@ Round 2 should be impinging on the Louisville area around midnight this evening,
 
 Over the next few hours, there's a chance for scattered thunderstorms. A few of these could be severe, especially any that leapfrog ahead of the next developing mesoscale convective system. Such a system is already beginning to brew in the form of discrete, severe thunderstorm cells south of Chicago -
 
-![evening chicago radar]({filename}/images/2015/07/Picture-3.png)
+![evening chicago radar]({static}/images/2015/07/Picture-3.png)
 
 Over the next few hours, some of these storms will congeal into another squall line, which will propagate towards Louisville. The [Storm Prediction Center anticipates extending a <span style="color: purple">Tornado Watch</span>](http://www.spc.noaa.gov/products/md/md1399.html) to cover much of south-central Indiana through the overnight hours; all severe weather threats are still in play, but any discrete cell that pops up before the main MCS could rotate and drop large hail or a quick tornado. Thus, there is still a small albeit not zero tornado threat for Louisville if any one of these cells persists.
 
@@ -53,7 +53,7 @@ Strong winds moving into Downtown Louisville, Highlands, etc. Still potential fo
 
 Picture from the dad, looking due North across I-64 from Bluegrass Parkway in industrial park north of Jeffersontown:
 
-![incoming squall line]({filename}/images/2015/07/IMG_20150713_143650.jpg)
+![incoming squall line]({static}/images/2015/07/IMG_20150713_143650.jpg)
 
 **UPDATE 5 - 2:22 PM EDT (1822Z)**
 
@@ -69,7 +69,7 @@ http://forecast.weather.gov/showsigwx.php?warnzone=KYZ030&warncounty=KYC111&fire
 
 Lost of [storm reports already coming in from central Indiana](http://www.spc.noaa.gov/climo/reports/today.html); **Flash Flood Warning** in effect for Louisville, east of I-65 as storms move towards the Ohio River:
 
-![radar update 203]({filename}/images/2015/07/Picture-2.png)
+![radar update 203]({static}/images/2015/07/Picture-2.png)
 
 Worst of storms should be east of I-65.
 
@@ -97,7 +97,7 @@ For those of you who keep score, the SPC *just* [re-issued a Moderate categorica
 
 Currently, a squall line associated with a much larger-scale circulation (a mesoscale convective vortex) around Lake Michigan is advancing southward through central Indiana. At 16Z it shows up pretty dramatically on visible satellite imagery:
 
-![GOES visible 16Z]({filename}/images/2015/07/BC3C7235-393A-428F-BE43-F3D7D410FEFE.png)
+![GOES visible 16Z]({static}/images/2015/07/BC3C7235-393A-428F-BE43-F3D7D410FEFE.png)
 
 As the squall line advances and threatens the Louisville area, the SPC will [shortly issue a Severe Thunderstorm Watch](http://www.spc.noaa.gov/products/md/md1390.html), with the main weather impacts around 2-3 PM EDT (18-19Z). A squall line like this will bring significant rain and winds; where uncertainty lies is in the precise character of the squall line. The [Louisville NWS office offers two scenarios, which I've condensed below:]
 
@@ -111,7 +111,7 @@ As the squall line advances and threatens the Louisville area, the SPC will [sho
 
 As of 12:42 PM EDT, severe watches are already in effect for northern parts of the Louisville news broadcast area as the squall line edges towards Bloomington:
 
-![squall line 12:46 PM EDT]({filename}/images/2015/07/Picture-1.png)
+![squall line 12:46 PM EDT]({static}/images/2015/07/Picture-1.png)
 
 ## Forecast Discussion
 

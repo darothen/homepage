@@ -203,7 +203,7 @@ Another useful package for reading in netCDF or other structured datasets is [`x
 
 
 
-![png]({filename}/images/2015/07/SST_data_11_2.png)
+![png]({static}/images/2015/07/SST_data_11_2.png)
 
 
 We can also very quickly render the raw data in a cartesian coordinate system using `imshow` from matplotlib. Note that we invert the second axis (latitude) since `imshow` defines its coordinate system from top-to-bottom.
@@ -213,7 +213,7 @@ We can also very quickly render the raw data in a cartesian coordinate system us
     plt.imshow(ds.sst[0,::-1,...])
 ```
 
-![png]({filename}/images/2015/07/SST_data_13_1.png)
+![png]({static}/images/2015/07/SST_data_13_1.png)
 
 ---
 
@@ -322,7 +322,7 @@ We can now easily plot the dataset using `iris`' interface to `matplotlib`, as a
     qplt.pcolormesh(new_sst)
 ```
 
-![png]({filename}/images/2015/07/SST_data_23_1.png)
+![png]({static}/images/2015/07/SST_data_23_1.png)
 
 ---
 
@@ -394,7 +394,7 @@ As a reminder, we can collapse a dimension using a mathematical operation rather
     plt.imshow(sst_proc.data[::-1])
 ```
 
-![png]({filename}/images/2015/07/SST_data_27_2.png)
+![png]({static}/images/2015/07/SST_data_27_2.png)
 
 
 What's especially nice now is that we have a much simpler X-Y/lat-lon coordinate system that doesn't deal with seams across the prime meridian or equator. So we don't even have to re-project our data! We can just plot it using the normal `matplotlib` routines. Below is an example of leveraging `cartopy`/`matplotlib` to build production-quality cartographic images.
@@ -457,4 +457,4 @@ What's especially nice now is that we have a much simpler X-Y/lat-lon coordinate
 
 ```
 
-![png]({filename}/images/2015/07/SST_data_30_1.png)
+![png]({static}/images/2015/07/SST_data_30_1.png)

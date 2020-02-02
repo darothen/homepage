@@ -11,7 +11,7 @@ That all changed last week and I decided to dive into things by working through 
 
 One of the really neat little projects in [CUDA by Example] is a simple ray tracer viewing a scene with random spheres:
 
-![Random spheres!]({filename}/images/2015/06/ray_C.png)
+![Random spheres!]({static}/images/2015/06/ray_C.png)
 
 The thing is *bleeding* fast on a GPU, but is so unbearably slow on a CPU (using a naive algorithm) that it's not worth attempting[^1]. It turns out, it's nearly as fast using NumbaPro and its CUDA/GPU extensions, and just as easy to write.
 
@@ -139,7 +139,7 @@ Then, we can render our image using matplotlib:
 
 and voila!
 
-![Spheres in Python rendered via CUDA!]({filename}/images/2015/06/ray_py-1.png)
+![Spheres in Python rendered via CUDA!]({static}/images/2015/06/ray_py-1.png)
 
 Amazingly, the NumbaPro-generated CUDA solution performs within a factor of 2 against the original CUDA implementation, including memory transfers. That's pretty amazing considering it's doing everything automatically!
 
