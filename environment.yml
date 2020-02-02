@@ -1,38 +1,34 @@
 name: blog
 channels:
-  - r
   - defaults
-  - darothen
 dependencies:
-- anaconda-client=1.4.0=py35_0
-- clyent=1.2.2=py35_0
-- docutils=0.12=py35_2
+- docutils
 - ipython
-- markdown=2.6.6=py35_0
+- markdown=2.6.11
 - nbconvert
-- openssl=1.0.2h=1
-- pip=8.1.2=py35_0
-- python=3.5.1=0
-- python-dateutil=2.5.3=py35_0
-- pytz=2016.4=py35_0
-- pyyaml=3.11=py35_4
-- readline=6.2=2
-- requests=2.10.0=py35_0
-- setuptools=23.0.0=py35_0
-- six=1.10.0=py35_0
-- sqlite=3.13.0=0
-- tk=8.5.18=0
-- unidecode=0.04.19=py35_0
-- wheel=0.29.0=py35_0
-- xz=5.0.5=1
-- yaml=0.1.6=0
-- zlib=1.2.8=3
+- openssl
+- pip
+- python=3.8
+- python-dateutil
+- pytz
+- pyyaml
+- readline
+- requests
+- setuptools
+- six
+- sqlite
+- tk
+- unidecode
+- wheel
+- xz
+- yaml
+- zlib
 - pip:
   - blinker
   - feedgenerator
   - ghp-import
-  - jinja
   - markupsafe
+  - nbdime
   - pelican
   - pygments
-prefix: /home/daniel/miniconda/envs/blog
+# prefix: /home/daniel/miniconda/envs/blog
