@@ -1,4 +1,4 @@
-name: Build and upload
+name: Compile latest content and deploy
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  compile:
+  compile_and_deploy:
     name: Compile latest content
     runs-on: ubuntu-latest
     steps:
@@ -32,29 +32,23 @@ jobs:
           make html
           make publish
       
-      - name: Archive compiled content for deployment
-        uses: actions/upload-artifact@master
-        with:
-          name: built website content
-          path: output/
+      # - name: Archive compiled content for deployment
+      #   uses: actions/upload-artifact@master
+      #   with:
+      #     name: built website content
+      #     path: output/
 
-  deploy:
-    name: Deploy latest content
-    runs-on: ubuntu-latest
-    needs: compile
-    steps:
-      - name: Checkout latest materials
-        uses: actions/checkout@v2
-        # Note that we don't need the submodules here, we just need the Makefile
-      - name: Retrieve compiled content
-        uses: actions/download-artifact@master
-        with:
-          name: built website content
-          path: output
+      # - name: Retrieve compiled content
+      #   uses: actions/download-artifact@master
+      #   with:
+      #     name: built website content
+      #     path: output
+
       - name: Set up private key for deployment server
         uses: webfactory/ssh-agent@v0.4.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Deploy to Webfaction
         run: |
           make rsync_upload 
