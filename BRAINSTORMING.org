@@ -10,7 +10,7 @@
 * Ideas [0/5]
   - [ ] Instead of a generic "Publications/Talks" section, why not have each talk or publication get its own special blog post? That blog post can have a special template, with places for DOI, Journal, Conference, etc., and feature the abstract of the work, some short comments, and a link to code, slides, FigShare/Slideshare, etc. These can all be under a "pub" category, with subcategories for talks versus presentations, "pub/talks", "pubs/writing"
   - [ ] Drafting blog concept via [[https://docs.google.com/presentation/d/1V_be2L73m5VFasAfNdN-w1iwme3VMrwQmCkNAKN62UM/edit#slide%3Did.g14767fafa1_1_30][Google Slides]]
-  - [ ] [[https://jpswalsh.github.io/academicons][Academic Social Media icons]] to supplement FontAwesome - ResearchGate, Google Scholar, ORCID, etc.
+  - [x] [[https://jpswalsh.github.io/academicons][Academic Social Media icons]] to supplement FontAwesome - ResearchGate, Google Scholar, ORCID, etc.
   - [ ] Re-build HTML/CSS template from scratch using Bootstrap3 - can easily make a simpler, more straightforward site.
   - [ ] Textured banner image border
     - https://fotostars.me/en-US/
