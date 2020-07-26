@@ -35,19 +35,22 @@ jobs:
       - name: Archive compiled content for deployment
         uses: actions/upload-artifact@master
         with:
-          name: homepage
-          path: public/
+          name: built website content
+          path: output/
 
   deploy:
     name: Deploy latest content
     runs-on: ubuntu-latest
     needs: compile
     steps:
+      - name: Checkout latest materials
+        uses: actions/checkout@v2
+        # Note that we don't need the submodules here, we just need the Makefile
       - name: Retrieve compiled content
         uses: actions/download-artifact@master
         with:
-          name: homepage
-          path: public
+          name: built website content
+          path: output
       - name: Set up private key for deployment server
         uses: webfactory/ssh-agent@v0.4.0
         with:
