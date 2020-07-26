@@ -25,6 +25,7 @@ jobs:
       - name: Install required packages
         run: |
           python --version
+          pip install wheel
           pip install -r requirements.txt
 
       - name: Compile latest content

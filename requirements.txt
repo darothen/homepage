@@ -10,7 +10,6 @@ setuptools
 six
 tk
 unidecode
-wheel
 blinker
 feedgenerator
 ghp-import
