@@ -16,6 +16,8 @@ the resulting environment, `blog`, can be activated with
 $ conda activate blog
 ```
 
+Alternatively, you can just use the included `requirements.txt` to prepare the necessary packages
+
 ## Development
 
 For development, simply start a dev server using the supplied Makefile via `make devserver` and navigate to [localhost:8000/output/](). You should hit the landing page.
