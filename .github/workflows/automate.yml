@@ -15,7 +15,7 @@ jobs:
       - name: Checkout latest materials
         uses: actions/checkout@v2
         with:
-          submodules: 'recursive'
+          submodules: 'true'
       
       - name: Set up Python
         uses: actions/setup-python@v1
