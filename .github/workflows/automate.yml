@@ -45,10 +45,18 @@ jobs:
       #     name: built website content
       #     path: output
 
-      - name: Set up private key for deployment server
-        uses: webfactory/ssh-agent@v0.4.0
+      # - name: Set up private key for deployment server
+      #   uses: webfactory/ssh-agent@v0.4.0
+      #   with:
+      #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # name: id_rsa # optional
+          # known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          # config: ${{ secrets.CONFIG }} # ssh_config; optional
 
       - name: Deploy to Webfaction
         run: |
