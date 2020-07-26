@@ -2,8 +2,6 @@ docutils
 ipython
 markdown==2.6.11
 nbconvert
-openssl
-pip
 python-dateutil
 pytz
 pyyaml
@@ -11,13 +9,8 @@ readline
 requests
 setuptools
 six
-sqlite
 tk
 unidecode
-wheel
-xz
-yaml
-zlib
 blinker
 feedgenerator
 ghp-import
