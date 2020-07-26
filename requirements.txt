@@ -1,6 +1,6 @@
 docutils
 ipython
-markdown=2.6.11
+markdown==2.6.11
 nbconvert
 openssl
 pip
