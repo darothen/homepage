@@ -3,8 +3,6 @@ name: Compile latest content and deploy
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
 
