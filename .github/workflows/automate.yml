@@ -33,30 +33,12 @@ jobs:
           make html
           make publish
       
-      # - name: Archive compiled content for deployment
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: built website content
-      #     path: output/
-
-      # - name: Retrieve compiled content
-      #   uses: actions/download-artifact@master
-      #   with:
-      #     name: built website content
-      #     path: output
-
-      # - name: Set up private key for deployment server
-      #   uses: webfactory/ssh-agent@v0.4.0
-      #   with:
-      #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
-          name: id_rsa # optional
-          # config: ${{ secrets.CONFIG }} # ssh_config; optional
+          name: id_rsa 
 
       - name: Deploy to Webfaction
         run: |
