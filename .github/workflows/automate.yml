@@ -1,0 +1,37 @@
+name: Build and upload
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  compile:
+    name: Compile latest content
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest materials
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install required packages
+        run: |
+          python --version
+          pip install -r requirements.txt
+
+      - name: Compile latest content
+        run: |
+          make html
+          make publish
+      
+      - name: Archive compiled content for deployment
+        uses: actions/upload-artifact@master
+        with:
+          name: homepage
+          path: public/
