@@ -55,7 +55,7 @@ jobs:
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
-          # name: id_rsa # optional
+          name: id_rsa # optional
           # config: ${{ secrets.CONFIG }} # ssh_config; optional
 
       - name: Deploy to Webfaction
