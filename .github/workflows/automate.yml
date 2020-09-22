@@ -26,6 +26,11 @@ jobs:
           pip install wheel
           pip install -r requirements.txt
 
+      - name: Check working dir
+        run: |
+          echo $PWD
+          ls -alh
+
       - name: Compile latest content
         run: |
           make html
