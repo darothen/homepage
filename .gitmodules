@@ -2,6 +2,3 @@
 	path = pelican-darothen
 	url = https://github.com/darothen/pelican-darothen.git
 	branch = master
-[submodule "pelican-plugins"]
-	path = pelican-plugins
-	url = https://github.com/getpelican/pelican-plugins
