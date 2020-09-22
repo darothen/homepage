@@ -30,7 +30,7 @@ jobs:
         run: |
           echo $PWD
           ls -alh
-          ls -ltrh pelican-plugins
+          ls -lt pelican-plugins/liquid_tags
 
       - name: Compile latest content
         run: |
