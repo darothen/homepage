@@ -12,10 +12,10 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=web625.webfaction.com
+SSH_HOST=danielrothenberg.com
 SSH_PORT=22
-SSH_USER=rothenberg
-SSH_TARGET_DIR=/home/rothenberg/webapps/danielrothenberg
+SSH_USER=dh_imw4yh
+SSH_TARGET_DIR=/home/$(SSH_USER)/danielrothenberg.com
 
 S3_BUCKET=my_s3_bucket
 
