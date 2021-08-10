@@ -6,7 +6,7 @@ DEFAULT_LANG = 'en'
 
 AUTHOR = 'Daniel Rothenberg'
 SITENAME = "daniel rothenberg"
-SITEURL = 'http://www.danielrothenberg.com'
+SITEURL = 'https://www.danielrothenberg.com'
 
 # Time and dates
 TIMEZONE = 'US/Eastern'
