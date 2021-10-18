@@ -27,5 +27,5 @@ All of the demos are written in and archived on [Google Colaboratory](https://co
 
 We'll kick things off with a gentle introduction to jax.
 
-{% notebook jax-first-steps-pt1.ipynb cells[1:] %}
+{% notebook notebooks/jax-first-steps-pt1.ipynb cells[1:] %}
 

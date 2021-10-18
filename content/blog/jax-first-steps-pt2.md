@@ -9,5 +9,5 @@ using some of the tools available in the vanilla `jax` library. Again,
 I've included a fully-functional notebook you can run on Google Colab
 and modify in any way you would like; a static copy is reproduced below.
 
-{% notebook jax-first-steps-pt2.ipynb cells[1:] %}
+{% notebook notebooks/jax-first-steps-pt2.ipynb cells[1:] %}
 

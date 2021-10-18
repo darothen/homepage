@@ -83,7 +83,9 @@ PLUGINS = [
     nb_liquid, 
 ]
 IGNORE_FILES = [".ipynb_checkpoints"]
-NOTEBOOK_DIR = 'notebooks'
+# NOTE: This was deprecated in the switch to pelican-jupyter and we now need to
+#       manually prepend notebook paths with "notebooks/"
+# NOTEBOOK_DIR = 'notebooks'
 try:
     EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8') if os.path.exists('_nb_header.html') else None
 except:
