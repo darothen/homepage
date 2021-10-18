@@ -16,4 +16,5 @@ ghp-import
 markupsafe
 nbdime
 pelican
+pelican-jupyter
 pygments
