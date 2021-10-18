@@ -1,6 +1,6 @@
 docutils
 ipython
-markdown==2.6.11
+markdown
 nbconvert
 python-dateutil
 pytz
