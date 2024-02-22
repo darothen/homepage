@@ -1,23 +1,2 @@
-# docutils
-# ipython
-# markdown
-# nbconvert
-# python-dateutil
-# pytz
-# pyyaml
-# requests
-# setuptools
-# six
-# tk
-# unidecode
-# blinker
-# feedgenerator
-# ghp-import
-# markupsafe
-# mistune>=2
-# nbconvert>=7
-# nbdime
-# pelican
-# pygments
 pelican[markdown]
 typogrify
